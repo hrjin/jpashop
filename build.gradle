@@ -1,0 +1,43 @@
+buildscript {
+    ext{
+        springBootVersion='2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+group 'jpabook'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    mysqlConnectorJavaVersion = '8.0.11'
+}
+
+dependencies {
+    // JPA 하이버네이트
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.7.Final'
+    
+    // Lombok
+    compile "org.projectlombok:lombok:1.16.20"
+
+    // jdbc
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.0.6.RELEASE'
+    runtime "mysql:mysql-connector-java:${mysqlConnectorJavaVersion}"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
