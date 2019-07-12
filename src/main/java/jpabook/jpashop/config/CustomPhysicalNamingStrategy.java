@@ -41,7 +41,7 @@ public class CustomPhysicalNamingStrategy implements PhysicalNamingStrategy {
     }
 
     private Identifier convertToSnakeCase(final Identifier identifier) {
-        if(identifier == null || identifier.equals("")){
+        if(identifier == null || identifier.getText().isEmpty()){
             return identifier;
         }
 
