@@ -7,6 +7,8 @@
         <class>jpabook.jpashop.domain.Order</class>
         <class>jpabook.jpashop.domain.OrderItem</class>
         <class>jpabook.jpashop.domain.OrderStatus</class>
+        <class>jpabook.jpashop.domain.Product</class>
+        <class>jpabook.jpashop.domain.MemberProduct</class>
 
         <properties>
             <!-- 필수 속성 -->
