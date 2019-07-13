@@ -9,6 +9,9 @@
         <class>jpabook.jpashop.domain.OrderStatus</class>
         <class>jpabook.jpashop.domain.Product</class>
         <class>jpabook.jpashop.domain.MemberProduct</class>
+        <class>jpabook.jpashop.domain.Delivery</class>
+        <class>jpabook.jpashop.domain.Category</class>
+        <class>jpabook.jpashop.domain.CategoryItem</class>
 
         <properties>
             <!-- 필수 속성 -->
