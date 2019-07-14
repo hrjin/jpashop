@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,7 +15,8 @@ import java.util.List;
  */
 @Data
 @Entity
-public class Member {
+@EqualsAndHashCode(callSuper=false)
+public class Member extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;

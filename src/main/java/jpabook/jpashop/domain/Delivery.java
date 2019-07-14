@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,8 @@ import javax.persistence.OneToOne;
  */
 @Data
 @Entity
-public class Delivery {
+@EqualsAndHashCode(callSuper=false)
+public class Delivery extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;

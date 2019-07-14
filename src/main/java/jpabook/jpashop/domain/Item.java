@@ -1,11 +1,9 @@
 package jpabook.jpashop.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -17,7 +15,10 @@ import java.util.List;
  */
 @Data
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+@EqualsAndHashCode(callSuper=false)
+public abstract class Item extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;

@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ import java.util.List;
  */
 @Data
 @Entity
-public class Category {
+@EqualsAndHashCode(callSuper=false)
+public class Category extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;

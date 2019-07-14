@@ -1,7 +1,7 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+import jpabook.jpashop.domain.Album;
+import jpabook.jpashop.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,6 +17,18 @@ public class Application {
         tx.begin();
 
         try{
+
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("김영한");
+
+            em.persist(book);
+
+            Album album = new Album();
+            album.setArtist("Buzz");
+            album.setEtc("My Music");
+
+            em.persist(album);
 
             // 실제 DB에 저장
             tx.commit();

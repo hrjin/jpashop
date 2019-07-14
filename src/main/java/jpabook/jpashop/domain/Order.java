@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,7 +16,8 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "orders")
-public class Order {
+@EqualsAndHashCode(callSuper=false)
+public class Order extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;
