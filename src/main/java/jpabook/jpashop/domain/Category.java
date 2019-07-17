@@ -7,6 +7,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.*;
+
 /**
  * @author hrjin
  * @version 1.0
@@ -24,7 +26,7 @@ public class Category extends BaseEntity {
     @OneToMany(mappedBy = "category")
     private List<CategoryItem> categoryItems;
 
-    @ManyToOne
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 

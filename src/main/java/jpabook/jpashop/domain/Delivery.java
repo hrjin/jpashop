@@ -3,10 +3,9 @@ package jpabook.jpashop.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+
+import static javax.persistence.FetchType.*;
 
 /**
  * @author hrjin
@@ -20,8 +19,10 @@ public class Delivery extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToOne(mappedBy = "delivery")
+
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
+
     private String city;
     private String street;
     private String zipCode;
