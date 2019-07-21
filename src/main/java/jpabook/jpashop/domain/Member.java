@@ -25,8 +25,7 @@ public class Member extends BaseEntity {
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts;
 
-    private String city;
-    private String street;
-    private String zipCode;
+    @Embedded
+    private Address address;
 
 }
